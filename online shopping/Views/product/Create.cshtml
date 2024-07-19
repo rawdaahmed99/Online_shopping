@@ -1,0 +1,89 @@
+﻿@model soft.Models.products
+
+@if (ViewBag.Message != null)
+{
+    <span style="color:orangered">@Html.Raw(ViewBag.Message)</span>
+}
+
+<h1>Add New product</h1>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        body {
+            background-color: bisque;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-co `ntent: flex-start;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .container {
+            margin-top: 1rem;
+        }
+
+        .form-control {
+            background-color: white;
+            color: black;
+        }
+
+        }
+    </style>
+</head>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="product_name" class="control-label"></label>
+                <input asp-for="product_name" class="form-control" />
+                <span asp-validation-for="product_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="product_price" class="control-label"></label>
+                <input asp-for="product_price" class="form-control" />
+                <span asp-validation-for="product_price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="quantity" class="control-label"></label>
+                <input asp-for="quantity" class="form-control" />
+                <span asp-validation-for="quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="product_pic" class="control-label"></label>
+                <input asp-for="product_pic" class="form-control" type="file" name="img_file" />
+                <span asp-validation-for="product_pic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="category_Id" class="control-label"></label>
+                <select asp-for="category_Id" class="form-control" asp-items="ViewBag.category_Id"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

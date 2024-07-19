@@ -1,0 +1,7 @@
+<location path="img">
+  <system.web>
+    <authorization>
+      <allow users="*" />
+    </authorization>
+  </system.web>
+</location>

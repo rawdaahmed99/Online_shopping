@@ -1,0 +1,95 @@
+﻿@model Login
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="~/css/Login.css" />
+    <style>
+ 
+        .gradient-custom-2 {
+            background-image: url('https://asset-a.grid.id//crop/0x0:0x0/700x465/photo/2022/12/28/black-friday-elements-assortment-20221228090752.jpg');
+            background-size: cover;
+            background-position:left;
+            text-decoration:solid;
+        }
+
+        .card-body {
+            padding: 2rem 1rem !important;
+        }
+
+        .form-outline {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-primary {
+            margin-right: 0.5rem;
+        }
+
+        .text-muted {
+            margin-left: 0.5rem;
+        }
+
+        .btn-outline-danger {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+        }
+    </style>
+</head>
+<section class="h-100 gradient-form">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="card-body p-md-5 mx-md-4">
+                                <div class="text-center">
+                                    <img src="https://cdn.dribbble.com/users/4843167/screenshots/14540242/dribbble-min_4x.jpg" ;
+                                         style="width: 200px;" alt="logo" class="active">
+                                </div>
+
+                                <form asp-action="Login" asp-controller="Home" method="post">
+                                   </br>
+                                    <div class="form-outline mb-4">
+                                        <input asp-for="UserName" type="text" id="form2Example11" class="form-control"
+                                               placeholder="Username" />
+                                        <span asp-validation-for="UserName"></span>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input asp-for="Password" type="password" id="form2Example22" class="form-control"
+                                               placeholder="Password" />
+                                        <span asp-validation-for="Password"></span>
+                                    </div>
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <input type="submit" vlaue="Login" class="btn btn-primary" width="400" />
+                                        
+                                    </div>
+
+                                    <div class="d-flex align-items-center justify-content-center pb-4">
+                                        <p class="mb-0 me-2">Don't have an account?</p>
+                                        <a href="/Home/Singup" class="btn btn-outline-danger">Create new</a>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                <h4 class="mb-4">Online Shopping</h4>
+                                <p zzzclass="small mb-0">
+                                    Get the best deals and discounts on all your favorite items with our online store.
+                                    </br>
+                                    Discover new products and shop the latest trends with just a few taps on your device.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</html>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
